@@ -9,4 +9,6 @@ var data = {
 // second parameter is expecting a string and we
 // are passing in a JSON object. Using Json.stringify we will have
 // convert our object over into a string.
-fs.writeFile('data.json', data)
+fs.writeFile('data.json', JSON.stringify(data), (err) => {
+    console.log('Write Finished: ', err)
+})
