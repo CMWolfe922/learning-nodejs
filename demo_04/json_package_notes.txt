@@ -1,0 +1,27 @@
+==============================
+CREATING A NPM NODE PACKAGE
+==============================
+
+Anytime we want to create a module we will have packages that
+we rely on. Just like installing lodash and nodemon. So if I
+want to create a npm package to be distributed. I need to create
+a package.json file so that I can share with other developers
+which packages they will need to run my module.
+
+This works better than just uploading your module a long with all
+the package files with it. Because sometimes, those package directories
+can contain hundreds if not thousands of files and that is way too many to
+transfer over.
+
+so in the package.json we create a list of packages that we
+want to install.
+
+> How to create the package.json file?
+--> Go to the command line and type: `npm init`
+
+> Next you will get a bunch of questions to answer.
+--> you can leave these as default if you like
+
+> But answering the questions is how you determine the name of the
+package, the author, the version, etc.. and it even finds all the packages
+that are in our node_modules folder and lists them as dependencies for us.
