@@ -85,3 +85,52 @@ bidirectional communication..
  |
  + --> So the first thing we will need to do is create a project folder. We will use this
        project folder over the next few videos.
+
+[1] --> Create a directory: in my case I called it static_app
+      |
+      +--> Once we create the directory we have to initialize
+           the project using npm init so that we can create
+           a package.json file which will store dependencies
+[2] --> Create a server file called `server.js`
+[3] --> Now we have to npm install express
+      |
+      +--> once express is installed we `import` express into
+           our file using `var express = require('express')`
+      +--> Then we create an app variable that we will use to
+           run the server. `var app = express()`
+[4]--> From here we would use the app.use function to host our
+       static files. `app.use(express.static(__dirname))` which
+       tells express we are hosting static files in this directory.
+[5]--> Creating the "server" function using app.listen
+     |
+     +--> `var server = app.listen(3000, () => {
+           console.log('Server is listening on port', server.address().port)
+     })`
+
+* That is the basics of the getting the script to host static files. Now we will create the front end so that we can add more features for the backend to do.
+----------------------------------------------------------------
+BUILDING THE FRONT END:
+----------------------------------------------------------------
+[+] First, I will use boot strap files to add nice looking ui to my HTML file.
+ |
+ +--> Make sure that you get the correct bootstrap examples. This tutorial was
+      made with bootsrap 4 and not 5 so I had to find the bootstrap 4 website
+    |
+    +-->https://getbootstrap.com/docs/4.0/getting-started/introduction/
+ |
+ +--> Once the style sheet and the jave script src files are loaded into the
+      the index.html document. We then have to build a container item.
+ +--> Bootstrap lets you use their items by referencing their class objects.
+      so for instance class="jumbotron" inside a div creates a big container
+      where you can display things in the web app.
+
+-------------------------------------------------------------------
+ADDING THE JAVASCRIPT ON THE HTML PAGE
+-------------------------------------------------------------------
+[+] in order to interact with our html page, we have to add java script
+to it. below I will copy and paste those functions and try and explain each
+one for future reference.
+
+--> In order to be able to send and post messages to our webapp we had to use
+    postman. But we don't have any way to parse the data so I have to download
+    body-parser
