@@ -112,3 +112,11 @@ bidirectional communication..
 BUILDING THE FRONT END:
 ----------------------------------------------------------------
 [+] First, I will use boot strap files to add nice looking ui to my HTML file.
+ |
+ +--> Make sure that you get the correct bootstrap examples. This tutorial was
+      made with bootsrap 4 and not 5 so I had to find the bootstrap 4 website
+    |
+    +-->https://getbootstrap.com/docs/4.0/getting-started/introduction/
+ |
+ +--> Once the style sheet and the jave script src files are loaded into the
+      the index.html document. We then have to build a container item.
