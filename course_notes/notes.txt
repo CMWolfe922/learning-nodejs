@@ -130,3 +130,7 @@ ADDING THE JAVASCRIPT ON THE HTML PAGE
 [+] in order to interact with our html page, we have to add java script
 to it. below I will copy and paste those functions and try and explain each
 one for future reference.
+
+--> In order to be able to send and post messages to our webapp we had to use
+    postman. But we don't have any way to parse the data so I have to download
+    body-parser
