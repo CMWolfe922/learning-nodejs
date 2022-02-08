@@ -85,3 +85,6 @@ bidirectional communication..
  |
  + --> So the first thing we will need to do is create a project folder. We will use this
        project folder over the next few videos.
+
+[1] --> Create a directory: in my case I called it static_app
+[2] --> Create a server file called `server.js`
