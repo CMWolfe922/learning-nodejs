@@ -4,10 +4,11 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+    <!-- I need to take out the slim in regards to the jquery verson that I
+    copy and pasted from the bootstrap website because I need the full version and
+    since I took the slim out, I had to remove the integrity part because that will
+    no longer work either -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
@@ -47,12 +48,31 @@
             $("#send").click(() => {
                 addMessages({ name: 'Tim', message: 'Hello' })
             })
+            getMessages()
         })
         // Now we will create a add messages function to our messages history
         // This will replace the console.log('loaded') in our call back
         // function above.
         function addMessages(message){
             $("#messages").append(`<h4> ${message.name} </h4> <p> ${message.message} </p>`)
+        }
+
+        // Lets create an http ajax request to get the messages
+        // inside the function we will use a jquery function .get
+        // and then we will add this below our click binding
+        function getMessages() {
+            $.get('http://localhost:3000/messages', (data) => {
+                //Now lets console.log(data) to make sure this works
+                // Once I see it works, I will then get rid of this and
+                // iterate over the data it is referencing and display it
+                // to the messages container I set up earlier.
+                // instead of doing it this way, I can just add my function
+                // addMessages to the function spot and it'll work just the same
+                // data.forEach(function(element) {
+                //     addMessages(element)
+                // }, this);
+                data.forEach(addMessages);
+            })
         }
     </script>
 

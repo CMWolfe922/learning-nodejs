@@ -120,3 +120,13 @@ BUILDING THE FRONT END:
  |
  +--> Once the style sheet and the jave script src files are loaded into the
       the index.html document. We then have to build a container item.
+ +--> Bootstrap lets you use their items by referencing their class objects.
+      so for instance class="jumbotron" inside a div creates a big container
+      where you can display things in the web app.
+
+-------------------------------------------------------------------
+ADDING THE JAVASCRIPT ON THE HTML PAGE
+-------------------------------------------------------------------
+[+] in order to interact with our html page, we have to add java script
+to it. below I will copy and paste those functions and try and explain each
+one for future reference.
