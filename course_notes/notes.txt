@@ -1,0 +1,87 @@
+============
+>>> WEB API:
+============
+--> Service that allows you to get and save data to a server or backend
+   |
+   + --> Examples:
+        |
+        + --> User Creation
+        + --> Show list of users
+
+============================
+>>> WEB FRAMEWORKS FOR NODE:
+============================
+[+] --> Express: " tried and tested"
+ |    |
+ |   [+] --> Traditional framework and simple to use
+ |
+[+] --> Sails: "Feature Rich"
+ |    |
+ |   [+] --> Has many sub frameworks such as an ORM or object Relational mapper which gives
+ |         us database access.
+ |
+[+] --> Koa: "Most Modern"
+
+--------------------------------------------------------------------------------------------
+- NOW WE WILL LOOK AT EACH ONE:
+--------------------------------------------------------------------------------------------
+
+============
+>>> EXPRESS:
+============
+- Fast, unopinionated, minimalist webframework for node.js
+
+- Supports Web Applications and Web APIs
+
+ [+] What is a Web Application?
+  |
+ [+] --> There is usually confusion about what exactly a web application is.
+  |     Most people think of just the front end part that they can see.
+ [+] --> But web applications have both front end and back end functionality.
+ [+] --> They are distributed across both their front end and backend
+ [+] --> With that being said, Express.js runs within Node.js and node is just something
+         for the back end. But it contributes to the app as a whole. which will talk to the backend.
+
+* Also, as mentioned, their is a lot of community support with Express.js to get help
+as well as online documentation because Express.js has been around for so long.
+
+
+==========
+SOCKET.IO:
+==========
+- Socket.io enables real time, bidirectional, event based communication.
+Express on the other allows the client to send a request to the server but
+does not allow the server to send a request to the client. So it doesn't have
+bidirectional communication..
+
+[+] But Socket.io solves this. in other words we can push notifications from
+ |   the server to the client when an event happens. as well as other data.
+ |   We will see how this works with our demo app.
+ |
+[+] --> Socket.io has two parts and both components have an API that is nearly identical.
+      | and Just like node.js it is event driven.
+      |
+      + --> Client Side Library: runs on the browser.
+      |
+      + --> Server Side Library for node.js:
+
+
+--------------------------------------------------------------------------------------------
+- BUILDING A WEB APPLICATION:
+--------------------------------------------------------------------------------------------
+* When building a web application think of it as a division of two responsibilities:
+    - Host Static Content
+     |
+    [+] --> Static content can be things like HTML files for websites or images, videos, etc..
+    - Host Dynamic Content
+     |
+    [+] --> Dynamic content is served through a web api or sometimes it is used to serve
+            dynamic webpages where the content or the view is composed on the server itself
+
+[+] For our app we will serve a simple html file for static files and then we will create
+ |  a web API to show how we can serve the dynamic content.
+ |
+ + --> We will begin by serving some static files with Express.js.
+ |
+ + --> So the first thing we will need to do is create a project folder. We will use this
+       project folder over the next few videos.
