@@ -34,7 +34,7 @@
             <br>
             <input class="form-control" placeholder="Name">
             <br>
-            <button class="btn btn-success">Send</button>
+            <button id="send" class="btn btn-success">Send</button>
         </div>
         <div id="messages">
 
@@ -44,9 +44,13 @@
         // This is a document ready function with a call back
         //  That loads the word loaded in the developer console
         $(() => {
-            console.log('loaded')
+            $("#send").click(() => {
+                addMessages({ name: 'Tim', message: 'Hello' })
+            })
         })
         // Now we will create a add messages function to our messages history
+        // This will replace the console.log('loaded') in our call back
+        // function above.
         function addMessages(message){
             $("#messages").append(`<h4> ${message.name} </h4> <p> ${message.message} </p>`)
         }
