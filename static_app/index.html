@@ -22,6 +22,7 @@
 </head>
 
 <body>
+    <br>
     <!-- Use a bootstrap class: container -->
     <div class="container">
         <!-- Then we will build a bootstrap component called jumbotron -->
@@ -29,9 +30,28 @@
         showcase different items on a website. -->
         <div class="jumbotron">
             <h1 class="display-4">Send Message</h1>
+        <!-- After this I can use a bootrap form-control class to take input -->
+            <br>
+            <input class="form-control" placeholder="Name">
+            <br>
+            <button class="btn btn-success">Send</button>
         </div>
+        <div id="messages">
 
+        </div>
     </div>
+    <script>
+        // This is a document ready function with a call back
+        //  That loads the word loaded in the developer console
+        $(() => {
+            console.log('loaded')
+        })
+        // Now we will create a add messages function to our messages history
+        function addMessages(message){
+            $("#messages").append(`<h4> ${message.name} </h4> <p> ${message.message} </p>`)
+        }
+    </script>
+
 </body>
 
 </html>
