@@ -29,6 +29,7 @@
         <!-- Then we will build a bootstrap component called jumbotron -->
         <!-- Jumbotron is a bootrap component allowing you to focus or
         showcase different items on a website. -->
+        <br>
         <div class="jumbotron">
             <h1 class="display-4">Send Message</h1>
         <!-- After this I can use a bootrap form-control class to take input -->
@@ -54,15 +55,15 @@
                 // access to the message variable, we will need to create
                 // ids in our html where we would like to send and receive
                 // that data from.
-                var message = {name: $("#name").val(), message: $("#message").val()}
-                postMessage(message);
+                var message = { name: $("#name").val(), message: $("#message").val()}
+                postMessage(message)
             })
             getMessages()
         })
         // Now we will create a add messages function to our messages history
         // This will replace the console.log('loaded') in our call back
         // function above.
-        function addMessages(message){
+        function addMessage(message){
             $("#messages").append(`<h4> ${message.name} </h4> <p> ${message.message} </p>`)
         }
 
@@ -80,12 +81,12 @@
                 // data.forEach(function(element) {
                 //     addMessages(element)
                 // }, this);
-                data.forEach(addMessages);
+                data.forEach(addMessage);
             })
         }
 
-         function postMessage() {
-                $.get('http://localhost:3000/messages', message)
+        function postMessage(message) {
+            $.post('http://localhost:3000/messages', message)
         }
     </script>
 

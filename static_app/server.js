@@ -1,10 +1,10 @@
 // Express doesn't come with node so I have to install it
 // Create a variable express and saved it to an instance of express
-var express = require('express');
+var express = require('express')
 // now that I installed the body-parser package, I need to import it
 // so we can set it up as middleware.
-var bodyParser = require('body-parser');
-var app = express();
+var bodyParser = require('body-parser')
+var app = express()
 
 // now to host a static file I will use app.use() function
 
