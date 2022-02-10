@@ -34,6 +34,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
  * db I don't care that the password is online. But for future uses,
  * needs to be stored in a config file somewhere safe.
  */
+mongoose.Promise = Promise
 const dbUrl = "mongodb+srv://root:root@practicecluster.wasnv.mongodb.net/test?retryWrites=true&w=majority"
 
 /**
@@ -77,23 +78,32 @@ app.get('/messages', (req, res) => {
  */
 app.post('/messages', (req, res) => {
     var message = new Message(req.body)
+// adding .then will help only execute if there arent errors
+// so we can get rid of the error param and place the whole callback
+// function inside then()
+    message.save()
 
-    message.save((err) => {
-        if (err)
-            sendStatus(500)
+    .then(() => {
+        console.log("Saved")
+        return Message.findOne({message: "badword"})
 
-        Message.findOne({message: "badword"}, (err, censored) => {
-            if (censored) {
-                console.log("[+] Censored word found: ", censored)
-                Message.remove({_id: censored.id}, (err) => {
-                    console.log("[+] Censored message removed")
-                })
-            }
-        })
+    })
 
+    .then( censored => {
+        if (censored) {
+            console.log("[+] Censored word found: ", censored)
+            return Message.deleteOne({_id: censored.id})
+        }
+
+        console.log("[+] Censored word removed: ", censored)
         io.emit('message', req.body)
-        console.log('[+] message:', req.body)
         res.sendStatus(200)
+
+    })
+
+    .catch((err) => { // create a catch with call back that takes in err
+        res.sendStatus(500)
+        return console.error(err)
     })
 
 })
