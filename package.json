@@ -2,7 +2,13 @@
   "dependencies": {
     "body-parser": "^1.19.1",
     "express": "^4.17.2",
+<<<<<<< HEAD
     "lodash": "^4.17.21"
+=======
+    "lodash": "^4.17.21",
+    "mongoose": "^6.2.1",
+    "socket.io": "^4.4.1"
+>>>>>>> app-main
   },
   "name": "nodejs-demo",
   "version": "0.0.1",
