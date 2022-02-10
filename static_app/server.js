@@ -83,6 +83,7 @@ app.post('/messages', (req, res) => {
             sendStatus(500)
 
         io.emit('message', req.body)
+        console.log('message:', req.body)
         res.sendStatus(200)
     })
 
@@ -92,7 +93,7 @@ io.on('connection', (socket) => {
     console.log('a user connected')
 })
 
-mongoose.connect(dbUrl, { useMongoClient: true }, (err) => {
+mongoose.connect(dbUrl, (err) => {
     console.log('mongo db connection', err)
 })
 /**
